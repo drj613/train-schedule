@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Train Schedule</title>
+        <link rel="stylesheet" type="text/css" href="assets/reset.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="assets/style.css">
+        <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+        <script src="assets/moment.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/4.5.0/firebase.js"></script>
+
+    </head>
+
+    <body>
+            <div class="jumbotron" id="banner" style="text-align: center">
+                <h1>Upcoming Train Schedule</h1>
+                <h2>Don't be late!</h2>
+            </div>
+            <div class="container">
+                <div class="row" id="schedule">
+                    <div class="panel panel-success">
+                        <div class="panel-heading">Current Train Schedule</div>
+                        <div class="panel-body">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th><b>Train Name</b></th>
+                                        <th><b>Destination</b></th>
+                                        <th><b>Frequency (min)</b></th>
+                                        <th><b>Next Arrival</b></th>
+                                        <th><b>Minutes Away</b></th>
+                                    </tr>
+                                </thead>
+                                <tbody id="table-bod">
+                                    <!-- 
+                                        <tr>
+                                            <td>words</td>
+                                            <td>morewords</td>
+                                        </tr>
+                                     -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row" id="train-info-input">
+                    <div class="panel panel-success">
+                        <div class="panel-heading">Add Train:</div>
+                        <div class="panel-body">
+                            <div class="form-group">
+                                <label for="train-name">Name</label>
+                                <input type="text" class="form-control" id="train-name" placeholder="Enter train name" style="margin-bottom: 10px">
+                                <label for="destination">Destination</label>
+                                <input type="text" class="form-control" id="destination" placeholder="Enter destination" style="margin-bottom: 10px">
+                                <label for="first-time">First Train Time (HH:mm - military time)</label>
+                                <input type="text" class="form-control" id="first-time" placeholder="Enter first arrival time" style="margin-bottom: 10px">
+                                <label for="frequency">Frequency (min)</label>
+                                <input type="text" class="form-control" id="frequency" placeholder="Enter frequency" style="margin-bottom: 10px">
+                                <button type="submit" class="btn btn-success" id="add-btn">Submit</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <script src="assets/app.js"></script>
+    </body>
+
+</html>
